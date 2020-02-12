@@ -103,6 +103,9 @@ cdef class _SSLProtocolTransport:
         """Return the current size of the write buffers."""
         return self._ssl_protocol._get_write_buffer_size()
 
+    def get_raw_write_buffer_size(self):
+        return self._ssl_protocol._write_buffer_size
+
     def set_read_buffer_limits(self, high=None, low=None):
         """Set the high- and low-water limits for read flow control.
 
